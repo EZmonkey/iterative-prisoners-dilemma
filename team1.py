@@ -7,9 +7,9 @@
 ####
 
 team_name = 'Patriots' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
-    
+strategy_name = 'Best Strategy'
+strategy_description = 'Not losing = winning'
+
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
@@ -26,7 +26,13 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    
+    #if len(my_history)==0: # It's the first round; collude.
+        #return 'c'
+    #if my_history[-1]=='c' and their_history[-2]=='c': #if enemy always colludes
+        #return 'b' # Betray if severely punished last time,
+    
+    return 'b'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
